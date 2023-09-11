@@ -1,20 +1,38 @@
-sidebar_background_color:
+light_mode_menu_background_color:
   type: string
   default: ""
   description: 
-    en: "Side-bar background color in hexadecimal, css color name or Discourse color variable. Leave blank to use current default."
+    en: "Side-bar background light mode color in hexadecimal, css color name or Discourse color variable. Leave blank to use current default."
+    
+light_mode_menu_transparency:
+  type: integer
+  default: ""
+  description: 
+    en: "Light mode background transparency scale 0.0-1.0 (ie: 0.1 = 10%, 0.75 = 75%)."
   
-more_section_background_color:
+dark_mode_menu_background_color:
   type: string
   default: ""
   description: 
-    en: "More section background color. Leave blank to use current default."
+    en: "Side-bar background dark mode color in hexadecimal, css color name or Discourse color variable. Leave blank to use current default."
 
-header_font_color:
+dark_mode_menu_transparency:
+  type: integer
+  default: ""
+  description: 
+    en: "Dark mode background transparency scale 0.0-1.0 (ie: 0.1 = 10%, 0.75 = 75%)."
+  
+light_mode_header_font_color:
   type: string
   default: ""
   description: 
-    en: "Section headers font color. Leave blank to use current default."
+    en: "Light mode section headers font color. Leave blank to use current default."
+
+dark_mode_header_font_color:
+  type: string
+  default: ""
+  description: 
+    en: "Dark mode section headers font color. Leave blank to use current default."
 
 header_font_weight:
   type: enum
@@ -41,11 +59,26 @@ header_font_size:
   description: 
     en: "Section headers text size in px. Leave blank to use current default."
   
-link_font_color:
+light_mode_link_font_color:
   type: string
   default: ""
   description: 
-    en: "Section link font color. Leave blank to use current default."
+    en: "Light mode link font color. Leave blank to use current default."
+    
+dark_mode_link_font_color:
+  type: string
+  default: ""
+  description: 
+    en: "Dark mode link font color. Leave blank to use current default."
+
+header_font_weight:
+  type: enum
+  default: normal
+  choices:
+    - normal
+    - bold
+  description: 
+    en: "Section headers font weight."
 
 link_font_size:
   type: enum
@@ -63,124 +96,23 @@ link_font_size:
   description: 
     en: "Section links text size in px. Leave blank to use current default."
 
-link_icon_color:
+light_mode_link_icon_color:
   type: string
   default: ""
   description: 
-    en: "Color of side-bar link icons. Leave blank to use current default."
-  
-current_link_font_color:
+    en: "Light mode color of side-bar link icons. Leave blank to use current default."
+
+dark_mode_link_icon_color:
   type: string
   default: ""
   description: 
-    en: "Color of the active side-bar link font. Leave blank to use current default."
+    en: "Dark mode color of side-bar link icons. Leave blank to use current default."
   
-current_link_background_color:
-  type: string
-  default: ""
-  description: 
-    en: "Background color of the active side-bar link. Leave blank to use current default."
- 
-current_link_icon_color:
-  type: string
-  default: ""
-  description: 
-    en: "Color of the active side-bar link icon. Leave blank to use current default."
-
-hide_community_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Community Section from all users."
-  
-hide_community_section_from_anon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Community Section from anonymous users only."
-
-hide_more_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar More Section from all users."
-
-hide_more_section_from_anon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar More Section from anonymous users only."
-    
-hide_anniversaries:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the Anniversaries link in the More section."
-
-hide_birthdays:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the Birthdays link in the More section."
-
-hide_docs:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the Docs link in the More section."
-
-hide_categories_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the sidebar Categories Section from all users."
-  
-hide_categories_from_anon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Categories Section from anonymous users only."
-
-hide_tags_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Tags Section from all users."
-  
-hide_tags_from_anon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Tags Section from anonymous users only."
-
-hide_messages_section:
-  type: bool
-  default: false
-  description: "Hide the side-bar Messages Section."
-
-hide_channels_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Channels Section."
-
-hide_personal_chat_section:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the side-bar Personal Chat Section."
-
 hide_category_bullets:
   type: bool
   default: false
   description: 
     en: "Hide the Category bullets in the side-bar."
-  
-hide_lock_icon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the lock badge icon for secured categories in the side-bar."
 
 category_bullet_rounding:
   type: enum
@@ -193,27 +125,3 @@ category_bullet_rounding:
     - 50%
   description: 
     en: "Side-bar category bullet rounding. Blank = default square, 50% = circle."
-
-hide_custom_section_from_anon:
-  type: bool
-  default: false
-  description:
-    en: "Hide a custom section from anonymous users."
-
-hide_custom_section_from_users:
-  type: bool
-  default: false
-  description:
-    en: "Hide a custom section from everyone except Staff (admins and moderators). Hide from anonymous users setting above must be disabled."
- 
-custom_section_to_hide:
-  type: string
-  default: ""
-  description:
-    en: "Custom section to hide from anon or regular users as specfied in above two settings. Use all lowercase and dashes for spaces (ie: forum-links)."
-
-hide_all_from_anon:
-  type: bool
-  default: false
-  description: 
-    en: "Hide the entire side-bar from anonymous users"  
